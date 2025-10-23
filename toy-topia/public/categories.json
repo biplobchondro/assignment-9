@@ -1,0 +1,30 @@
+[
+    {
+        "id":0,
+        "name": "All Toys"
+    },
+    {
+        "id":1,
+        "name": "Learning Toys"
+    },
+    {
+        "id":2,
+        "name": "Arts & Crafts Toys"
+    },
+    {
+        "id":3,
+        "name": "Remote Control Toys"
+    },
+    {
+        "id":4,
+        "name": "Puzzles Toys"
+    },
+    {
+        "id":5,
+        "name": "Soft Toys"
+    },
+    {
+        "id":6,
+        "name": "Sports Toys"
+    }
+]
