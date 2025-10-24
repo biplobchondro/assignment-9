@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { FaStar } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router';
 
 const ToyCard = ({toy}) => {
      const { toyId, toyName, pictureURL, rating, price, availableQuantity } = toy;
@@ -7,12 +8,12 @@ const ToyCard = ({toy}) => {
         <div className="bg-pink-100 shadow-md p-3">
       <img src={pictureURL} alt={toyName} className="rounded-lg h-48 mx-auto" />
       <h3 className=" font-bold text-pink-600 mt-3">{toyName}</h3>
-      <p>Rating: ⭐ {rating}</p>
+      <p>Rating: <FaStar/> {rating}</p>
       <p>Available: {availableQuantity}</p>
       <p>Price: ${price}</p>
-      <NavLink  to={`/toy/${toyId}`} className="btn w-full btn-sm bg-pink-500 text-white mt-2">
+      <Link  to={`/toy-details/${toyId}`} className="btn w-full btn-sm bg-pink-500 text-white mt-2">
       View More
-      </NavLink>
+      </Link>
     </div>
     );
 };
