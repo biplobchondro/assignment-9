@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import AuthLayout from "../layOuts/AuthLayout";
 import ToyDetails from "../pages/ToyDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import Loading from "../pages/Loading";
 
 const router = createBrowserRouter([
     {
@@ -43,7 +44,8 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
             <ToyDetails></ToyDetails>
         </PrivateRoute>,
-        loader: () => fetch("/toyNews.json")
+        loader: () => fetch("/toyNews.json"),
+        hydrateFallbackElement:<Loading></Loading>,
     },
     {
         path:'/*',
