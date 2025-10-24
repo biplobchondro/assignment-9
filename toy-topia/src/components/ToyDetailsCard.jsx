@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router';
 
 const ToyDetailsCard = ({toys}) => {
-    console.log(toys)
+    // console.log(toys)
 
     const { toyId, toyName, pictureURL, rating, price, availableQuantity } = toys;
 
