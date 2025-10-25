@@ -8,16 +8,30 @@ const Register = () => {
     const {createUser, setUser, updateUser} = useContext(AuthContext);
     const [showRegPassword, setRegPassword] = useState(false);
     const navigate = useNavigate();
-    const handleRegister = (e) =>{
-        e.preventDefault();
-        // console.log(e.target)
+    const [error, setError] = useState('');
 
-        const form = e.target;
+    const handleRegister = (event) =>{
+        event.preventDefault();
+        
+
+        const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log({name, photo, email, password});
+
+        // const passwordRegPattern = /^.{6,}$/;
+        // const caseRegPattern = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+
+        // if(!passwordRegPattern.test(password)){
+        //     setError('Password must be a 6 character or longer')
+        //     return;
+        // }else if(!caseRegPattern.test(password)){
+        //     setError('Password must have at least one uppercase and one lower case character')
+        //     return;
+        // }
+
+
         createUser(email, password)
         .then((result) =>{
             const user = result.user;

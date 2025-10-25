@@ -8,6 +8,7 @@ import AuthLayout from "../layOuts/AuthLayout";
 import ToyDetails from "../pages/ToyDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
+import ErrorPage from "../components/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
         path:'/*',
-        element:<h2>Error404</h2>
+        element:<ErrorPage/>
     }
 ])
 

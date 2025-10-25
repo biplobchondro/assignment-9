@@ -17,8 +17,11 @@ const Navbar = () => {
     }
     return (
         <div className='flex justify-between py-4'>
-            <div>{user && user.email}</div>
-            <div className='nav flex gap-6 items-center font-semibold text-accent'>
+            <div className='font-semibold items-center gap-3 flex'>
+                <img className='w-9 h-9' src="https://i.ibb.co.com/MkRpT1S2/icon.png" alt="" />
+                <h2>Toy-Topia</h2>
+            </div>
+            <div className=' flex gap-6 items-center font-semibold text-accent'>
                 <NavLink to = '/'>Home</NavLink>
                 <NavLink to = '/about'>About</NavLink>
                 <NavLink to = '/my-profile'>My Profile</NavLink>

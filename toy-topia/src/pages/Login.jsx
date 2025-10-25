@@ -18,7 +18,19 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log({email, password});
+        
+        const passwordPattern = /^.{6,}$/;
+        const casePattern = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+
+        if(!passwordPattern.test(password)){
+            setError('Password must be a 6 character or longer')
+            return;
+        }else if(!casePattern.test(password)){
+            setError('Password must have at least one uppercase and one lower case character')
+            return;
+        }
+
+
         signIn(email, password)
         .then((result) => {
             const user = result.user;
@@ -47,7 +59,7 @@ const Login = () => {
         <input name='email' type="email" className="input" placeholder="Email" required/>
         <label className="label">Password</label>
         <div className='relative'>
-            <input name='password' type={showPassword ? 'text' : 'password'}
+            <input name='password'                                   
             className="input" placeholder="Password" required/>
             <button onClick={handleTogglePasswordShow}
             className="btn btn-xs top-2 right-2 border-0 bg-base-100 md:right-5  absolute">
